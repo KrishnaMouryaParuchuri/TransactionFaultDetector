@@ -1,4 +1,4 @@
-Use an official OpenJDK base image (Java 17, matching our project)
+#Use an official OpenJDK base image (Java 17, matching our project)
 
 FROM openjdk:17-jdk-slim
 
