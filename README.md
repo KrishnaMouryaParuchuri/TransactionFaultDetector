@@ -74,6 +74,7 @@ docker-compose up --build
 ```
 
   - Builds the Spring Boot app image and starts Zookeeper, Kafka, Redis, Elasticsearch, and the app.
+  - Wait ~30-60 seconds for all services to initialize.
 
 2. Access the Application:
 
@@ -107,7 +108,7 @@ docker-compose down
   - Query faults manually:
 
 ```bash
-curl http://localhost:9200/faults/_search?pretty.
+curl http://localhost:9200/faults/_search?pretty
 ```
 3. Monitor Logs:
 
@@ -118,18 +119,12 @@ docker-compose logs -f app
 
 ## Troubleshooting
 
-- Kafka Connectivity:
-  - Check Kafka health: should show "healthy".
-```bash
-docker inspect kafka | grep Health
-```
-
+- Kafka/Redis/Elasticsearch Connectivity:
+  
   - Test Kafka:
 ```bash
-docker exec -it kafka kafka-topics --list --bootstrap-server kafka:9092.
+docker exec -it kafka kafka-topics --list --bootstrap-server kafka:9092
 ```
-
-- Redis/Elasticsearch Connectivity:
   - Test Redis: should return "PONG".
 ```bash
 docker exec -it redis redis-cli ping
@@ -153,15 +148,15 @@ netstat -a -n -o (Windows)
   - Fix: Health checks and a 10-second app startup delay are included.
   - Verify logs:
 ```
-docker-compose logs -f <service>.
+docker-compose logs -f <service>
 ```
 
 - App Errors:
   - Check logs:
   ```
-  docker-compose logs -f app | grep ERROR.
+  docker-compose logs -f app | grep ERROR
   ```
   - Restart:
   ```
-  docker-compose down && docker-compose up --build.
+  docker-compose down && docker-compose up --build
   ```
