@@ -6,7 +6,7 @@ A real-time transaction fault detection system built with Spring Boot, Kafka, Re
 - [Technologies](#Technologies)
 - [Architecture](#Architecture)
 - [Prerequisites](#Prerequisites)
--  [Setup Instructions](#Setup_Instructions)
+- [Setup Instructions](#Setup_Instructions)
 - [Running the application](#Running_the_application)
 - [Usage](#Usage)
 - [Troubleshooting](#Troubleshooting)
@@ -45,7 +45,7 @@ The system follows an event-driven microservices architecture:
 - Git: For cloning the repository.
 - Optional: Maven and Java 17 for local development without Docker.
 
-## Setup Instructions
+### Setup Instructions
 
 1. Clone the repository
 
@@ -129,7 +129,7 @@ docker-compose down
 
 ```bash
 docker-compose logs -f app
-
+```
   - Look for messages like "Fault detected for user user123: 6 transactions in 1 minute".
 
 ## Troubleshooting
