@@ -6,7 +6,7 @@ A real-time transaction fault detection system built with Spring Boot, Kafka, Re
 - [Technologies](#technologies)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
-- [Setup-Instructions](#setupinstructions)
+- [Setup Instructions](#setup instructions)
 - [Running the Application](#running the application)
 - [Usage]
 - [Troubleshooting](troubleshooting)
@@ -41,4 +41,4 @@ The system follows an event-driven microservices architecture:
 
 ## Setup Instructions
 
-##Running the Application
+## Running the Application
