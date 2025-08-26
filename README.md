@@ -63,26 +63,7 @@ docker-compose --version
 
 3. Project Structure
 
-TransactionFaultDetector/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/
-│   │   │       ├── TransactionFaultDetectorApplication.java
-│   │   │       ├── model/
-│   │   │       ├── controller/
-│   │   │       ├── producer/
-│   │   │       ├── consumer/
-│   │   │       └── config/
-│   │   └── resources/
-│   │       ├── static/
-│   │       │   ├── index.html
-│   │       │   └── script.js
-│   │       └── application.properties
-├── Dockerfile
-├── docker-compose.yml
-├── pom.xml
-└── README.md  
+<img width="667" height="419" alt="image" src="https://github.com/user-attachments/assets/13fc0d35-1d69-40ed-9a03-eb1502166c41" />
 
 ## Running the Application
 
