@@ -6,7 +6,7 @@ A real-time transaction fault detection system built with Spring Boot, Kafka, Re
 - [Technologies](#technologies)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
-- [Setup-Instructions](#setup-instructions)
+- [Setup-Instructions](#setupinstructions)
 - [Running the Application](#running the application)
 - [Usage]
 - [Troubleshooting](troubleshooting)
@@ -31,19 +31,14 @@ The project is containerized using Docker and Docker Compose, ensuring consisten
 
 The system follows an event-driven microservices architecture:
 
-[Front-End: HTML/JS UI]
-        ↓
-[Spring Boot REST API]
-        ↓
-[Kafka Producer] → [Kafka Topic: transactions] → [Kafka Consumer & Fault Detector]
-        ↓                                              ↓
-[Redis: Cache counts]                          [Elasticsearch: Store faults]
-        ↓
-[Display faults via API/UI]
-
+<img width="715" height="192" alt="image" src="https://github.com/user-attachments/assets/9ca2659a-aec7-4b19-abca-1d76a28baa59" />
 
 - Front-End: Users submit transactions (user ID, amount) via a web UI, which calls the backend API.
 - Spring Boot Backend: Handles API requests, produces transactions to Kafka, consumes streams, detects faults, and queries Elasticsearch.
 - Kafka: Streams transactions in real-time.
 - Redis: Caches transaction counts per user with a 1-minute TTL for efficient fault detection.
 - Elasticsearch: Stores faults for historical analysis (e.g., query all faults for a user).
+
+## Setup Instructions
+
+##Running the Application
