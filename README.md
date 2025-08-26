@@ -6,7 +6,7 @@ A real-time transaction fault detection system built with Spring Boot, Kafka, Re
 - [Technologies](#Technologies)
 - [Architecture](#Architecture)
 - [Prerequisites](#Prerequisites)
-- [Setup Instructions](#Setup_Instructions)
+-  [Setup Instructions](#Setup_Instructions)
 - [Running the application](#Running_the_application)
 - [Usage](#Usage)
 - [Troubleshooting](#Troubleshooting)
@@ -92,11 +92,11 @@ TransactionFaultDetector/
 docker-compose up --build
 ```
 
-- Builds the Spring Boot app image and starts Zookeeper, Kafka, Redis, Elasticsearch, and the app.
+  - Builds the Spring Boot app image and starts Zookeeper, Kafka, Redis, Elasticsearch, and the app.
 
 2. Access the Application:
 
-- Open http://localhost:8080 in a browser to access the UI.
+  - Open http://localhost:8080 in a browser to access the UI.
 
 API endpoints:
 
@@ -116,22 +116,21 @@ docker-compose down
 
 1. Submit Transactions:
 
-- In the UI, enter a User ID (e.g., user123) and Amount (e.g., 100.50).
-- Click "Submit Transaction".
-- To trigger a fault, submit 6+ transactions for the same user within 1 minute.
+  - In the UI, enter a User ID (e.g., user123) and Amount (e.g., 100.50).
+  - Click "Submit Transaction".
+  - To trigger a fault, submit 6+ transactions for the same user within 1 minute.
 
 2. View Alerts:
 
-- Alerts (e.g., "User: user123, Transactions: 6, Detected: [timestamp]") appear in the UI every 5 seconds.
-- Query faults manually: curl http://localhost:9200/faults/_search?pretty.
+  - Alerts (e.g., "User: user123, Transactions: 6, Detected: [timestamp]") appear in the UI every 5 seconds.
+  - Query faults manually: curl http://localhost:9200/faults/_search?pretty.
 
 3. Monitor Logs:
 
 ```bash
 docker-compose logs -f app
-```
 
-- Look for messages like "Fault detected for user user123: 6 transactions in 1 minute".
+  - Look for messages like "Fault detected for user user123: 6 transactions in 1 minute".
 
 ## Troubleshooting
 
