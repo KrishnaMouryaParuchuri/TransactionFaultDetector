@@ -157,11 +157,11 @@ docker-compose logs -f <service>.
 ```
 
 - App Errors:
-  - Check logs: 
-```
-docker-compose logs -f app | grep ERROR.
-```
+  - Check logs:
+  ```
+  docker-compose logs -f app | grep ERROR.
+  ```
   - Restart:
-```
-docker-compose down && docker-compose up --build.
-```
+  ```
+  docker-compose down && docker-compose up --build.
+  ```
