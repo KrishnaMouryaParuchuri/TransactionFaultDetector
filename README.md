@@ -123,8 +123,11 @@ docker-compose down
 2. View Alerts:
 
   - Alerts (e.g., "User: user123, Transactions: 6, Detected: [timestamp]") appear in the UI every 5 seconds.
-  - Query faults manually: curl http://localhost:9200/faults/_search?pretty.
+  - Query faults manually:
 
+```bash
+curl http://localhost:9200/faults/_search?pretty.
+```
 3. Monitor Logs:
 
 ```bash
@@ -135,22 +138,49 @@ docker-compose logs -f app
 ## Troubleshooting
 
 - Kafka Connectivity:
-  - Check Kafka health: docker inspect kafka | grep Health (should show "healthy").
-  - Test Kafka: docker exec -it kafka kafka-topics --list --bootstrap-server kafka:9092.
+  - Check Kafka health: should show "healthy".
+```bash
+docker inspect kafka | grep Health
+```
+
+  - Test Kafka:
+```bash
+docker exec -it kafka kafka-topics --list --bootstrap-server kafka:9092.
+```
 
 - Redis/Elasticsearch Connectivity:
-  - Test Redis: docker exec -it redis redis-cli ping (should return PONG).
-  - Test Elasticsearch: curl http://localhost:9200 (should return cluster info).
+  - Test Redis: should return "PONG".
+```bash
+docker exec -it redis redis-cli ping
+```
+  - Test Elasticsearch: should return cluster info.
+```bash
+curl http://localhost:9200
+```
 
 - Port Conflicts:
   - Cause: Ports 8080, 9092, 2181, 6379, or 9200 are in use.
-  - Fix: Check: netstat -tuln | grep 8080 (Linux/macOS) or netstat -a -n -o (Windows). Free ports or change in docker-compose.yml.
+  - Fix: Check:
+```
+netstat -tuln | grep 8080 (Linux/macOS)
+netstat -a -n -o (Windows)
+```
+  - Free ports or change in docker-compose.yml.
 
 - Service Not Ready:
   - Cause: Kafka, Redis, or Elasticsearch not fully started.
-  - Fix: Health checks and a 10-second app startup delay are included. Verify logs: docker-compose logs -f <service>.
+  - Fix: Health checks and a 10-second app startup delay are included.
+  - Verify logs:
+```
+docker-compose logs -f <service>.
+```
 
 - App Errors:
-  - Check logs: docker-compose logs -f app | grep ERROR.
-  - Restart: docker-compose down && docker-compose up --build.
-
+  - Check logs: 
+```
+docker-compose logs -f app | grep ERROR.
+```
+  - Restart:
+```
+docker-compose down && docker-compose up --build.
+```
