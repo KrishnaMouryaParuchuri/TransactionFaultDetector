@@ -50,7 +50,7 @@ The system follows an event-driven microservices architecture:
 1. Clone the repository
 
 ```bash
-https://github.com/KrishnaMouryaParuchuri/TransactionFaultDetector.git
+git clone https://github.com/KrishnaMouryaParuchuri/TransactionFaultDetector.git
 cd TransactionFaultDetector/TransactionFaultDetector
 ```
 
