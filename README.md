@@ -11,3 +11,19 @@ A real-time transaction fault detection system built with Spring Boot, Kafka, Re
 - [Running the Application](#running the application)
 - [Usage]
 - [Troubleshooting](troubleshooting)
+
+## Project Overview
+
+This project demonstrates a scalable, event-driven system for detecting transaction faults in real-time, inspired by fraud detection systems used in fintech (e.g., banks or payment platforms like PayPal). Transactions are streamed via Kafka, cached in Redis for efficient counting, and stored in Elasticsearch for querying and analysis. A simple HTML/JavaScript UI allows users to submit transactions and view detected faults.
+
+The project is containerized using Docker and Docker Compose, ensuring consistent deployment across environments. It serves as a portfolio piece to showcase skills in Java, Spring Boot, streaming, caching, search, and front-end development.
+
+## Features
+
+Real-Time Processing: Detects transaction faults (e.g., >5 transactions in 1 minute) using Kafka streams.
+Caching: Uses Redis to track transaction counts with a sliding 1-minute window.
+Data Storage: Stores faults in Elasticsearch for historical analysis and querying.
+REST API: Spring Boot provides endpoints to submit transactions and retrieve faults.
+Front-End: Simple HTML/JavaScript UI for user interaction.
+Containerization: Dockerized with Docker Compose for easy setup and reproducibility.
+Scalability: Designed for high throughput with Kafka and Redis.
