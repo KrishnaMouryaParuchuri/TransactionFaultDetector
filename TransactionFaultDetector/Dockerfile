@@ -8,7 +8,9 @@ WORKDIR /app
 
 #Copy the Maven build file and source code
 
-COPY pom.xml . COPY src ./src
+COPY pom.xml .
+RUN mkdir -p ./src 
+COPY src ./src
 
 #Install Maven inside the container (slim image doesn't have it)
 
