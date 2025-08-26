@@ -31,7 +31,7 @@ The project is containerized using Docker and Docker Compose, ensuring consisten
 
 The system follows an event-driven microservices architecture:
 
-<img width="715" height="192" alt="image" src="https://github.com/user-attachments/assets/9ca2659a-aec7-4b19-abca-1d76a28baa59" />
+<img width="898" height="202" alt="image" src="https://github.com/user-attachments/assets/6b2af7b1-4d11-4218-b886-2f79c13f2b06" />
 
 - Front-End: Users submit transactions (user ID, amount) via a web UI, which calls the backend API.
 - Spring Boot Backend: Handles API requests, produces transactions to Kafka, consumes streams, detects faults, and queries Elasticsearch.
